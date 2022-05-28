@@ -1,0 +1,62 @@
+\chapter{Theoretical Basis}
+\section{Linear Algebra}
+\section{Quantum Mechanics}
+\begin{enumerate}
+\item Notation from Nielsen und Chuang
+\item Ket vector
+\item bra vector
+\item inner product
+\item outer product
+\item Tensor product
+\item Hermitian conjugate or adjoint of the A matrix
+\item Inner product between $\ket{\phi}$ and $A\ket{\psi}$. Equivalently, inner product between $A^\dagger\ket{\phi}$ and $\ket{\psi}$.
+\end{enumerate}
+\textcolor{red}{Todo: Intro Quantum}
+
+
+Quantum mechanics uses the \textit{braket} notation. Instead of writing $\vec{\rho}$ to represent a state vector, it is denoted by a \textit{ket}, i.e. $\ket{\rho}$. \textit{Bra $\rho$} refers to the conjugate transpose of the vector, thus $\bra{\rho}=(\ket{\rho})^\dagger$. 
+
+The state of a quantum system is described by a \textit{state vector} in its \textit{state space}. A state space is a complex Hilbert space. In case of a qubit, the state space is two-dimensional. An orthonormal basis for the state space of a qubit are the vectors $\ket{0}$ and $\ket{1}$. $\ket{0}$ is not to be confused with the \textit{zero vector} for which the braket notation is not used. 
+
+\begin{equation}
+    \ket{0}=\begin{pmatrix}1\\0\end{pmatrix}, \ket{1}=\begin{pmatrix}0\\1\end{pmatrix}
+\end{equation}
+
+Each state vector of a qubit can be represented as a linear combination of the basis vectors: \begin{equation}\ket{\rho}=\alpha\ket{0}+\beta\ket{1}=\begin{pmatrix}\alpha\\\beta\end{pmatrix}
+\end{equation}
+
+$\alpha$ and $\beta$ are called \textit{probability amplitudes}. State vectors are unit vectors and thus normalised. This yields to the condition $\braket{\rho\vert\rho}=(\alpha\bra{0}+\beta\bra{1})(\alpha\ket{0}+\beta\ket{1})=1$. With the inner product of a vector with itself being $1$, and the inner product of two orthogonal vectors being $0$, the equation can be further simplified. Thus, the amplitudes are limited by
+$|\alpha|^2+|\beta|^2=1$.
+If both amplitudes are unequal to zero, the quantum system is said to be in a  \textit{superposition} of states. 
+
+Yet, one cannot measure such superposition. When measured, a quantum system collapses to the measured state. Considering the basis $\{\ket{0},\ket{1}\}$, either one of the two states is measured. It is also possible to perform measurements with respect to a different basis. 
+
+\textbf{Born's Rule}
+
+The quantum system is measured with respect to an orthonormal basis spanning its Hilbert space. Those are not necessarily $\ket{0}$ and $\ket{1}$ as it can be seen in chapter \ref{Eisert}. Consider the basis $\{\ket{\phi_1},...,\ket{\phi_n}\}$. The probability $P(\phi_i)$ of measuring a state $\ket{\phi_1}$ where $1\leq i\leq n$
+
+For the introduced standard basis, the probabilities of measuring $\ket{0}$ and $\ket{1}$ are $|\alpha|^2$ and $|\beta|^2$ respectively. 
+
+
+
+\subsection{Observables}
+
+\subsection{Operations}
+
+\subsection{Multiple Quantum Bits}
+\begin{enumerate}
+\item Basis states:
+    how do they look like, tensor product for one
+\end{enumerate}
+
+
+
+
+\section{Game Theory}
+Equivalence
+
+Nash Equilibrium
+
+Pareto Optimal
+
+game categories

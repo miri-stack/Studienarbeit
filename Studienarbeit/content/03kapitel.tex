@@ -1,0 +1,59 @@
+\chapter{Study of Quantum Games}
+
+\section{Meyer's PQ penny flip}
+The PQ penny flip game was first introduced by David Meyer in 1998. In this game, a penny is placed heads up. Captain Picard and Q take turns on flipping or not flipping the penny without seeing what the other one did. Q is the first one to make a move, afterwards it is Picard's turn before Q makes his second move. In case the penny is heads down, Picard wins and gets a payoff of $1$, Q looses $-1$. Is the penny heads up, Q receives the payoff of $1$ and Picard looses $-1$.
+
+In Meyer's quantum version of the game, Q can apply quantum moves on the penny, while Picard sticks to probabilistic moves.
+
+\section{Quantum Prisoner's Dilemma}\label{Eisert}
+\citeauthor{Eisert00} formulated the quantum prisoner's dilemma in 1998. The game is a two-qubit quantum game.
+Similarly to the classical game, Alice and Bob are interrogated separately. A third party, the interrogator, sends each of them a qubit. Alice and Bob manipulate their qubit in order to send a response. Both are unaware of the chosen strategy of the other party. They then send the qubits back. Eventually, the interrogator evaluates the respective pay-offs by measuring the qubits. The resulting quantum game has the following definition: $\Gamma=(\Complex^2\otimes\Complex^2, \rho,S,S,P,P)$ \textcolor{red}{[for clarity maybe separate S and P, Bezugnahme zu classical game definition]}.
+
+In this game, quantum mechanics are included by using a quantum particle as means of communication. Like this, Alice and Bob are not restricted to classical strategies but can choose a strategy between defecting and cooperating.
+
+Each qubit's state can be represented in a Hilbert space. The four vectors $\ket{00}, \ket{01}, \ket{10}$ and $\ket{11}$ span the four dimensional vector space $H$. This Hilbert space is formed by the tensor product of $\Hilbert_A$ and $\Hilbert_B$ - $\Hilbert=\Hilbert_A\otimes\Hilbert_B$. Alice gives her answer by operating on the Hilbert space $\Hilbert_A$, while Bob operates in $\Hilbert_B$, where $\Hilbert_A=\Hilbert_B=\Complex^2$. In this context operating means, applying their respective strategies $s_A$ and $s_B$. This maps the state space to itself. $s_A \otimes s_B:S(H) \to S(H)$
+
+First, the interrogator brings the qubits in the entangled state.
+$\rho=\ket{\psi}\bra{\psi}$ where 
+$\ket{\psi}=(\ket{00}+i\ket{11})/\sqrt2$. In Dirac notation, the first entries refer to Alice's qubit, while the latter refers to Bob's.
+
+After receiving the qubit fromm the interrogator, Alice and Bob make their moves. This means they apply the strategies $s_A\sim U_A$ and $s_B\sim U_B$ on the respective qubit yielding to the state $\sigma$.
+$\sigma=(U_A\otimes U_B)\rho(U_A\otimes U_B)^\dagger$.
+\textcolor{red}{Gedanke und Todo für mich: Kann es sein, dass Alice und Bob gar nicht direkt auf ihrem Qubit arbeiten können? Zumindest finde ich  nicht raus, wie man die Rechnung aufspalten würde, damit man das darstellen kann, wie z.B.: $(U_A\otimes U_B)\ket{\psi}=(U_A\ket{\psi_A})\otimes(U_B\ket{\psi_B})$.\\
+Wie kann man sich also vorstellen, dass die beiden ihr Qubit manipulieren. } 
+
+In the next step, the qubits are sent to the interrogator. Measuring the state of the quantum system allows to calculate the payoff for Alice and Bob. Instead of using the basis vectors of the Hilbert space $\Hilbert$ for measurment, the interrogator uses the Kraus operators shown in equation \textcolor{red}{[x]}.
+\textcolor{red}{What are Kraus operators? ausbauen}These operators form the basis for measuring the qubits. They refer to the classic strategies of the game. 
+
+\begin{subequations}
+\begin{align}
+    &\pi_{CC}=\ket{\psi_{CC}}\bra{\psi_{CC}},\ket{\psi_{CC}}=(\ket{00}+i\ket{11})/\sqrt2 \label{one} \\ &\pi_{CD}=\ket{\psi_{CD}}\bra{\psi_{CD}},\ket{\psi_{CD}}=(\ket{01}+i\ket{10})/\sqrt2 \label{two}\\   &\pi_{DC}=\ket{\psi_{DC}}\bra{\psi_{DC}},\ket{\psi_{DC}}=(\ket{10}+i\ket{01})/\sqrt2 \label{three} \\
+    &\pi_{DD}=\ket{\psi_{DD}}\bra{\psi_{DD}},\ket{\psi_{DD}}=(\ket{11}+i\ket{00})/\sqrt2 \label{four}
+\end{align}
+\end{subequations}
+
+
+$P_A(s_A, s_B) = A_{CC}tr[\pi_{CC}\sigma] +A_{CD}tr[\pi_{CD}\sigma] +A_{DC}tr[\pi_{DC}\sigma] +A_{DD}tr[\pi_{DD}\sigma]$
+
+$P_B(s_A, s_B) = B_{CC}tr[\pi_{CC}\sigma] +B_{CD}tr[\pi_{CD}\sigma] +B_{DC}tr[\pi_{DC}\sigma] +B_{DD}tr[\pi_{DD}\sigma]$
+
+$\rho=\ket{\psi}\bra{\psi}=\begin{pmatrix}1/2&0&0&i/2\\0&0&0&0\\0&0&0&0\\i/2&0&0&1/2\end{pmatrix}$
+
+
+\subsection{Quantum Prisoner's Dilemma with classical strategies}
+
+The following section demonstrates the calculations steps for the case that Alice and Bob stick to classical strategies. In this scenario, both chose the, in the classical game, dominant strategy of defecting Consequently, Alica and Bob should receive a payoff of $3$.
+\textcolor{red}{vlt. beide defecten oder alice defected und bob cooperates, um von Eisert's Paper abzuweichen?}
+
+$\sigma=(D\otimes D)(\rho)(D\otimes D)^\dagger\\
+=(\begin{pmatrix}0&1\\-1&0\end{pmatrix}\otimes\begin{pmatrix}0&1\\-1&0\end{pmatrix})\rho(\begin{pmatrix}1&0\\0&1\end{pmatrix}^\dagger\otimes\begin{pmatrix}0&1\\-1&0\end{pmatrix}^\dagger)$
+
+
+\begin{equation}
+\begin{split}
+    \sigma&=(C\otimes D)(\rho)(C\otimes D)^\dagger\\
+    &=(\begin{pmatrix}1&0\\0&1\end{pmatrix}\otimes\begin{pmatrix}0&1\\-1&0\end{pmatrix})\rho(\begin{pmatrix}1&0\\0&1\end{pmatrix}^\dagger\otimes\begin{pmatrix}0&1\\-1&0\end{pmatrix}^\dagger)\\
+    &=\begin{pmatrix}0&1&0&0\\-1&0&0&0\\0&0&0&1\\0&0&-1&0\end{pmatrix}\begin{pmatrix}\frac{1}{2} & 0 & 0 & -\frac{i}{2} \\0 & 0 & 0 & 0 \\0 & 0 & 0 & 0 \\\frac{i}{2} & 0 & 0 & \frac{1}{2} \end{pmatrix}\begin{pmatrix}0&-1&0&0\\1&0&0&0\\0&0&0&-1\\0&0&1&0\end{pmatrix}\\
+\end{split}
+\end{equation}
+

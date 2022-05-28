@@ -1,0 +1,44 @@
+%!TEX root = ../dokumentation.tex
+
+\addchap{\langabkverz}
+%nur verwendete Akronyme werden letztlich im Abkürzungsverzeichnis des Dokuments angezeigt
+%Verwendung:
+%		\ac{Abk.}   --> fügt die Abkürzung ein, beim ersten Aufruf wird zusätzlich automatisch die ausgeschriebene Version davor eingefügt bzw. in einer Fußnote (hierfür muss in header.tex \usepackage[printonlyused,footnote]{acronym} stehen) dargestellt
+%		\acs{Abk.}   -->  fügt die Abkürzung ein
+%		\acf{Abk.}   --> fügt die Abkürzung UND die Erklärung ein
+%		\acl{Abk.}   --> fügt nur die Erklärung ein
+%		\acp{Abk.}  --> gibt Plural aus (angefügtes 's'); das zusätzliche 'p' funktioniert auch bei obigen Befehlen
+%	siehe auch: http://golatex.de/wiki/%5Cacronym
+%
+\begin{acronym}[YTMMM]
+\setlength{\itemsep}{-\parsep}
+\item \acro{API}{Application Programming Interface}
+\item \acro{ATT}[AT\&T]{American Telephone and Telegraph Company}
+\item \acro{BCPL}{Basic Combined Programming Language}
+\item\acro{BSD}{Berkeley System Distribution}
+\item \acro{FHS}{Filesystem Hierarchy Standard}
+\item\acro{FSF}{Free Software Foundation}
+\item \acro{FSSTND}{Filesystem Standard}
+\item \acro{GCC}{GNU Compiler Collection}
+\item \acro{GPL}{GNU General Public License}
+\item \acro{GUI}{Graphical User Interface}
+\item \acro{HPE}{Hewlett Packard Enterprise}
+\item \acro{ISO}{International Organization for Standardization}
+\item \acro{I/O}{Input/Output}
+\item \acro{HPE}{Hewlett Packard Enterprise}
+\item \acro{LTS}{Long Term Support}
+\item \acro{MIT}{Massachusetts Institute of Technology}
+\item \acro{Multics}{Multiplexed Information and Computing Service}
+\item \acro{OO}{Object Oriented}
+\item \acro{OOP}{Object-oriented Programming}
+\item \acro{OS}{Operating System}
+\item \acro{POSIX}{The Portable Operating System Interface}
+\item \acro{RHEL}{Red Hat Enterprise Linux}
+\item \acro{SLE}{SUSE Linux Enterprise}
+\item \acro{SLES}{SUSE Linux Enterprise Server}
+\item \acro{SUT}{System under Test}
+\item \acro{UC Berkley}{University of California, Berkeley}
+\item \acro{VFS}{Virtual File System}
+\item \acro{VM}{Virtual Machine}
+\item \acro{WMI}{Windows Management Instrumentation}
+\end{acronym}

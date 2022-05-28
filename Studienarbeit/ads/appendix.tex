@@ -1,0 +1,113 @@
+% !TeX root = ../dokumentation.tex
+
+\addchap{\langanhang}
+
+{\Large
+\begin{enumerate}[label=\Alph*.]
+	\item Overview about Available CI/CD platforms
+	\item Overview about Available Unit Test and Mocking Frameworks
+\end{enumerate}
+}
+\pagebreak
+%\includepdf[pages=-,scale=.9,pagecommand={}]{Aufgabenstellung.pdf} % PDF um 10% verkleinert einbinden --> Kopf- und Fußzeile  werden so korrekt dargestellt. Die Option `pages' ermöglicht es, eine bestimmte Sequenz von Seiten (z.B. 2-10 oder `-' für alle Seiten) auszuwählen.
+%\pagebreak
+\section*{A. Overview about Available CI/CD platforms}
+\label{appendix-a}
+{\renewcommand{\arraystretch}{2}}%
+\setlength\tabcolsep{5pt} % save inner margin space
+{\tiny
+\begin{longtabu} to \hsize{
+	|X[1.2,c]|
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.2,c]|
+}
+		\hline
+		\setlength\tabcolsep{1.5pt} % save inner margin space
+		   Platform & GitHub Enterprise Integration & Docker Integration & C Tool Chain Natively Integrated & Freely Available? & Linux Support & Automated Notifications & Deployment on Different Physical Servers
+		    \\\hline\hline
+
+		   \setlength\tabcolsep{5pt} % save inner margin space
+            Appveyor \parencite{appveyor:2017} & \cmark & \cmark  & \xmark (\textbf{C++} only) & \xmark & \xmark & \cmark & \xmark (Only on external cloud vendors)    \\\hline
+            AWS CodeBuild \parencite{codebuild:2017} & \xmark  & \cmark & \xmark  & \xmark & \cmark  & \cmark & \xmark (Only on external cloud vendors)  \\\hline
+            Bamboo \parencite{bamboo:2017} & \xmark  & \cmark & \xmark (\textbf{C++} only) & \xmark & \cmark & \cmark &  \cmark   \\\hline
+            \rowcolor{lightgray} Buildbot \parencite{buildbot:2017} & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark &  \cmark     \\\hline
+            Buildkite \parencite{buildkite:2017} & \cmark  & \cmark & \xmark & \xmark & \cmark & \cmark & Not Applicable     \\\hline
+            Buildmaster \parencite{buildmaster:2017} & \cmark & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark    \\\hline
+            CircleCI \parencite{circle:2017} & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark &  \cmark  \\\hline
+            Codeship \parencite{codeship:2017} & \xmark & \cmark & \xmark & \xmark & \cmark & \cmark & \cmark    \\\hline
+            Concourse CI \parencite{concourse:2017} & \cmark & \cmark & \xmark & \cmark & \cmark & \xmark (Plug Ins) & \cmark  \\\hline
+            Continua CI \parencite{continua:2017} & \xmark & \xmark & \xmark (\textbf{C++} only) & \xmark & \xmark & \cmark & \cmark   \\\hline
+            Drone CI \parencite{drone:2017} & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark      \\\hline
+            Gitlab CI \parencite{gitlab:2017} & \xmark & \cmark & \cmark & \cmark & \cmark & \cmark  & \cmark   \\\hline
+            Go CD \parencite{go:2017} & \xmark & \cmark & Unknown & \cmark & \cmark & \cmark & \cmark     \\\hline
+            Heroku CI \parencite{heroku:2017} & \xmark & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark \\\hline
+            Hudson \parencite{hudson:2017} & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark & \cmark     \\\hline
+            \rowcolor{lightgray} Jenkins \parencite{jenkins:2017} & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark  &  \cmark   \\\hline
+            Quickbuild \parencite{quickbuild:2017} & \xmark & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark    \\\hline
+            Screwdriver \parencite{screwdriver:2017} & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark &  \cmark  \\\hline
+            Semaphore \parencite{semaphore:2017} & \xmark & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark \\\hline
+            Shippable \parencite{shippable:2017} & \cmark  & \cmark & \cmark & \xmark & \cmark &  \cmark & \cmark  \\\hline
+            Snap CI \parencite{snap:2017} & \xmark & \xmark & \cmark & \xmark & \xmark & \cmark & \xmark (Only on external cloud vendors)    \\\hline
+            Solano CI \parencite{solano:2017} & \cmark & \cmark & \xmark & \xmark & \cmark & \cmark & \cmark    \\\hline
+            Strider \parencite{strider:2017} & \cmark & \xmark (Plug In) & \xmark & \cmark & \cmark & \cmark & \cmark     \\\hline
+            Teamcity \parencite{teamcity:2017} & \cmark  & \xmark & \xmark (Plug In) & \xmark & \cmark & \cmark  & \cmark \\\hline
+            Test Kitchen \parencite{testkitchen:2017} & \xmark & \cmark & \xmark & \cmark & \cmark & \xmark &   \xmark   \\\hline
+            Travis CI \parencite{travis:2017} & \cmark  & \cmark & \cmark & \xmark & \cmark & \cmark  &  \cmark  \\\hline
+            Visual Studio Team Services \parencite{vsts:2017} & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark \\\hline
+            Wercker \parencite{wercker:2017} & \xmark & \cmark & \xmark & \xmark & \cmark & \cmark  & \xmark   \\\hline
+	\caption{Comparison between different available \ac{CI/CD} platforms, based on \parencite{github:2017} \parencite{githubent0:2017} \parencite{thomasleveil:2015} \parencite{xebialabs:2017} \parencite{stackshare:2017} \parencite{g2crowd:2017}}
+		\label{comparison-of-ci-cd-platforms}
+\end{longtabu}
+}
+\newpage
+\section*{B. Overview about Available Unit Test and Mocking Frameworks}
+\label{appendix-b}
+{\renewcommand{\arraystretch}{2}}%
+\setlength\tabcolsep{5pt} % save inner margin space
+{\tiny
+\begin{longtabu} to \hsize{
+	|X[1.2,c]|
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.3,c]
+	|X[1.2,c]|
+}
+		\hline
+		\setlength\tabcolsep{1.5pt} % save inner margin space
+		   Framework & Unit Test Support & Mocking Support & Easy Integration & C11 Support & Freely Available? & Linux Support 
+		    \\\hline\hline
+
+		   \setlength\tabcolsep{5pt} % save inner margin space
+		   AceUnit \parencite{aceunit:2009} & \cmark & \xmark & \xmark & \cmark & \cmark & \cmark\\\hline
+           Assert \parencite{asserth:2016} & \cmark & \xmark & \cmark  & \cmark & \cmark & \cmark\\\hline
+           Ceedling \parencite{ceedling:2017}& \cmark & \cmark & \xmark & \cmark & \cmark & \cmark\\\hline
+           Check \parencite{check:2016} & \cmark  & \xmark & \cmark & \cmark & \cmark & \cmark\\\hline
+            \rowcolor{lightgray} CMocka \parencite{cmocka:2013}& \cmark  & \cmark & \cmark & \cmark & \cmark & \cmark\\\hline
+            \rowcolor{lightgray} Cmockery \parencite{cmockery:2017}& \cmark & \cmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           CppUnit \parencite{cppunit:2013} & \cmark  & \xmark & \cmark & \xmark & \cmark & \cmark\\\hline
+           CPPUTest \parencite{cpputest:2017}& \cmark  & \cmark & \xmark & \xmark & \cmark & \cmark\\\hline
+           Criterion \parencite{criterion:2017} & \cmark  & \xmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           CUnit \parencite{cunit:2005} & \cmark & \xmark  & \cmark & \cmark & \cmark & \cmark\\\hline
+           CuTest \parencite{cutest:2003}  & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           embUnit \parencite{embunit:2006}  & \cmark & \xmark  & \xmark & \cmark & \cmark & \cmark\\\hline
+           Fake Function Framework \parencite{fff:2017} & \xmark  & \cmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           GNU Autoconf \parencite{autoconf:2012} & \cmark & \xmark  & \xmark & \cmark & \cmark & \cmark\\\hline 
+           Google Test Framework \parencite{google:2017}  & \cmark  & \cmark & \cmark & \xmark & \cmark & \cmark\\\hline
+            \rowcolor{lightgray} LCUT \parencite{lcut:2016}  & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           Minunit \parencite{minunit:2017}  & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark\\\hline
+           RCUnit \parencite{rcunit:2013}  & \cmark & \xmark& \cmark & \cmark & \cmark & \cmark\\\hline
+           Typemock \parencite{typemock:2016}  & \cmark & \cmark & \xmark & \cmark & \xmark & \cmark\\\hline
+           Unity \parencite{unity:2014}  & \cmark & \cmark  & \xmark & \xmark & \cmark & \cmark\\\hline
+           Xunit \parencite{xunit:2017} & \cmark & \xmark & \cmark & \xmark & \cmark & \cmark\\\hline  
+	\caption{Comparison between different available unit test and mocking frameworks}
+		\label{comparison-of-framework}
+\end{longtabu}
+}
+

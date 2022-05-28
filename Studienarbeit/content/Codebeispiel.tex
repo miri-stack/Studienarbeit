@@ -1,0 +1,43 @@
+%!TEX root = ../dokumentation.tex
+
+\chapter{Beispiel Code-schnipsel einbinden}
+
+%title wird unter dem Bsp. abgedruckt
+%caption wird im Verzeichnis abgedruckt
+%label wird zum referenzieren benutzt, muss einzigartig sein.
+
+\begin{lstlisting}[caption=Code-Beispiel, label=Bsp.1]
+public class HelloWorld {
+	public static void main (String[] args) {
+		// Ausgabe Hello World!
+		System.out.println("Hello World!");
+	}
+}
+\end{lstlisting}
+
+%language ändert die Sprache. (Wenn nur eine Sprache verwendet wird, kann diese Sprache in einstellungen.tex geändert werden. Standardmäßig Java.)
+\begin{lstlisting}[caption=Python-Code, label=Python-Code, title=Titel des Python-Codes,language=Python]
+def quicksort(liste):
+if len(liste) <= 1:
+	return liste
+pivotelement = liste.pop()
+links = [element for element in liste if element < pivotelement]
+rechts = [element for element in liste if element >= pivotelement]
+return quicksort(links) + [pivotelement] + quicksort(rechts)
+# Quelle: http://de.wikipedia.org/wiki/Python_(Programmiersprache)
+\end{lstlisting}
+
+\begin{lstlisting}[caption=Example program invoking \textit{system()}, label=system-example, title=Example program invoking \textit{system()},. language=C++]
+#include "stdlib.h"
+
+int main(){
+system("echo $(hostname)");
+}
+\end{lstlisting}
+
+
+\section{Verweis auf Code}
+Verweis auf den Code \autoref{Bsp.1}.\\
+und der Python-Code \autoref{Python-Code}.
+
+Zweite Erwähnung einer Abkürzung \ac{AGPL} (Erlärung wird nicht mehr angezeigt)
